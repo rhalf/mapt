@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mapt-1b9b0" : {
+      "hosting": {
+        "mapt" : [
+          "mapt-1b9b0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mapt-1b9b0"
+  }
+}
