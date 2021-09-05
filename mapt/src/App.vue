@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <AppNavbar></AppNavbar>
+    <v-main style="background-color: #e0e0e0" class="pa-0 ma-0">
+      
+      <v-sheet
+        id="scrolling-techniques-5"
+        class="overflow-y-auto "
+        max-height="100vh"
+      >
+        <v-container>
+          <v-sheet height="200"></v-sheet>
+          <router-view></router-view>
+        </v-container>
+          <AppFooter/>
+      </v-sheet>
+    </v-main>
+    <Notify />
+  </v-app>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AppNavbar from "./components/AppNavbar";
+import AppFooter from "./components/AppFooter";
+
+import Notify from "./components/Notify";
+import notify from "./mixins/notify";
+
+import app from "./mixins/app";
 
 export default {
-  name: 'App',
+  mixins: [notify, app],
   components: {
-    HelloWorld
-  }
-}
+    AppNavbar,
+    AppFooter,
+    Notify,
+  },
+  data() {
+    return {};
+  },
+  created() {},
+  methods: {},
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html {
+  overflow-y: auto;
 }
 </style>
