@@ -48,4 +48,35 @@ export default {
 html {
   overflow-y: auto;
 }
+
+.scroll-slide-right-after {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 2s ease-out;
+}
+
+.scroll-slide-right-before {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.scroll-slide-up-after {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 2s ease-out;
+}
+
+.scroll-slide-up-before {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.scroll-fade-in-before {
+  opacity: 0;
+  transition: all 2s ease-out;
+}
+
+.scroll-fade-in-after {
+  opacity: 1;
+}
 </style>

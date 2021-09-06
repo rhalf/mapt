@@ -47,7 +47,7 @@
       </v-tabs>
     </template>
 
-    <v-btn icon to="Home" router>
+    <v-btn icon @click="gotoHome()">
       <v-icon>mdi-home</v-icon>
     </v-btn>
   </v-app-bar>
@@ -67,7 +67,10 @@ export default {
     };
   },
   methods: {
-    
+    gotoHome() {
+      // console.log(this.$store.state.search);
+      this.$router.push({ name: "Home" }).catch(() => {});
+    },
     toggleDrawer() {
       //this.$store.dispatch("setDrawerLeft", !this.$store.state.drawer.left);
       // console.log( this.$store.state.drawer.left);

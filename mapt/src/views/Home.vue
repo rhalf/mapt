@@ -1,28 +1,100 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col></v-col>
-      <v-sheet max-width="1080">
-        <v-carousel
-          cycle
-          show-arrows-on-hover
-          max-width="1080"
-          height="240"
+    <v-sheet max-width="1080" class="mx-auto">
+      <v-container>
+        <v-row>
+          <v-col>
+            <v-fade-transition hide-on-leave>
+              <v-carousel
+                cycle
+                show-arrows-on-hover
+                max-width="1080"
+                height="200"
+                hide-delimiter-background
+                hide-delimiter
+                interval="5000"
+                reverse-transition="slide-x-transition"
+                transition="slide-x-transition"
+              >
+                <v-carousel-item
+                  v-for="(item, i) in items"
+                  :key="i"
+                  :src="item.src"
+                ></v-carousel-item>
+              </v-carousel>
+            </v-fade-transition>
+          </v-col>
+        </v-row>
 
-          hide-delimiter-background
-          interval="5000"
-          reverse-transition="slide-x-transition"
-          transition="slide-x-transition"
-        >
-          <v-carousel-item
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src"
-          ></v-carousel-item>
-        </v-carousel>
-      </v-sheet>
-      <v-col></v-col>
-    </v-row>
+        <v-row>
+          <v-col>
+            <v-container style="height: 2000px">
+              <v-slide-x-transition>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                  vel sapien vel urna porta rhoncus et sit amet sapien. Quisque
+                  cursus sapien vel nisl congue consectetur. Cras eu feugiat
+                  sapien. Pellentesque at dignissim nunc. Aenean id nisi in
+                  justo semper lobortis. Morbi sed erat eget sapien scelerisque
+                  congue. Morbi eu est rutrum, consectetur dolor et, lacinia
+                  justo. Nulla facilisi. Nullam felis odio, posuere eu lorem sit
+                  amet, dignissim consequat turpis. Mauris rhoncus luctus
+                  fermentum. Fusce consectetur, odio eu pretium aliquet, dui leo
+                  tempus justo, sed rutrum velit nunc quis eros. Fusce libero
+                  massa, finibus ac auctor venenatis, molestie in urna.
+                </p>
+              </v-slide-x-transition>
+              <v-slide-x-transition>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                  vel sapien vel urna porta rhoncus et sit amet sapien. Quisque
+                  cursus sapien vel nisl congue consectetur. Cras eu feugiat
+                  sapien. Pellentesque at dignissim nunc. Aenean id nisi in
+                  justo semper lobortis. Morbi sed erat eget sapien scelerisque
+                  congue. Morbi eu est rutrum, consectetur dolor et, lacinia
+                  justo. Nulla facilisi. Nullam felis odio, posuere eu lorem sit
+                  amet, dignissim consequat turpis. Mauris rhoncus luctus
+                  fermentum. Fusce consectetur, odio eu pretium aliquet, dui leo
+                  tempus justo, sed rutrum velit nunc quis eros. Fusce libero
+                  massa, finibus ac auctor venenatis, molestie in urna.
+                </p>
+              </v-slide-x-transition>
+
+              <v-slide-x-transition>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                  vel sapien vel urna porta rhoncus et sit amet sapien. Quisque
+                  cursus sapien vel nisl congue consectetur. Cras eu feugiat
+                  sapien. Pellentesque at dignissim nunc. Aenean id nisi in
+                  justo semper lobortis. Morbi sed erat eget sapien scelerisque
+                  congue. Morbi eu est rutrum, consectetur dolor et, lacinia
+                  justo. Nulla facilisi. Nullam felis odio, posuere eu lorem sit
+                  amet, dignissim consequat turpis. Mauris rhoncus luctus
+                  fermentum. Fusce consectetur, odio eu pretium aliquet, dui leo
+                  tempus justo, sed rutrum velit nunc quis eros. Fusce libero
+                  massa, finibus ac auctor venenatis, molestie in urna.
+                </p>
+              </v-slide-x-transition>
+
+              <transition name="slide" mode="out-in">
+                <div>element you are apply the transition to</div>
+              </transition>
+            </v-container>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col>
+            <v-img
+              max-width="192"
+              max-height="192"
+              :src="app.profile.logo"
+              transition="slide-x-transition"
+            ></v-img>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-sheet>
   </v-container>
 </template>
 

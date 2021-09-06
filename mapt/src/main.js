@@ -8,7 +8,13 @@ import directive from './plugins/directive';
 import router from './router'
 import store from './store'
 
+// import scrollSlideUp from './directives/scrollSlideUp'
+// import scrollSlideRight from './directives/scrollSlideRight'
+// import scrollFadeIn from './directives/scrollFadeIn'
 
+// Vue.directive('scrollFadeIn', scrollFadeIn);
+// Vue.directive('scrollSlideUp', scrollSlideUp);
+// Vue.directive('scrollSlideRight', scrollSlideRight);
 
 //##################################################leaflet
 // import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
