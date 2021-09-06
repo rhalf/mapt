@@ -4,6 +4,11 @@ export default {
         vmgo: {},
 
         services: [],
+        clients: [],
+        projects: [],
+        personnels: [],
+        vehicles: [],
+        equipments: [],
         
         vers: "0.0.1",
         auth: "rhalfcaacbay@gmail.com"
