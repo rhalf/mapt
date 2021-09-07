@@ -1,15 +1,18 @@
 <template>
   <v-app>
     <AppNavbar></AppNavbar>
-    <v-main style="background-color: #e0e0e0" class="pa-0 ma-0">
+    <v-main style="background-color: #e0e0e0">
       <v-sheet
         id="scrolling-techniques-5"
-        class="overflow-y-auto"
-        max-height="100vh"
+        class="overflow-y-auto overflow-x-hidden"
+        style="height: 100vh"
       >
         <v-container>
-          <v-sheet height="200"></v-sheet>
-          <router-view></router-view>
+          <v-sheet height="200" width="auto"></v-sheet>
+
+          <Transition name="fade-transition" mode="out-in">
+            <router-view></router-view>
+          </Transition>
         </v-container>
         <AppFooter />
       </v-sheet>
@@ -38,7 +41,6 @@ export default {
   data() {
     return {};
   },
-  created() {},
   methods: {},
 };
 </script>
@@ -51,7 +53,7 @@ html {
 .scroll-slide-right-before {
   opacity: 0;
   transform: translateX(-100px);
-  transition: all 2s ease-out;
+  transition: all 0.5s ease-out;
 }
 .scroll-slide-right-after {
   opacity: 1;
@@ -61,7 +63,7 @@ html {
 .scroll-slide-left-before {
   opacity: 0;
   transform: translateX(100px);
-  transition: all 2s ease-out;
+  transition: all 0.5s ease-out;
 }
 .scroll-slide-left-after {
   opacity: 1;
@@ -71,7 +73,7 @@ html {
 .scroll-slide-up-before {
   opacity: 0;
   transform: translateY(100px);
-  transition: all 2s ease-out;
+  transition: all 0.5s ease-out;
 }
 .scroll-slide-up-after {
   opacity: 1;
@@ -81,7 +83,7 @@ html {
 .scroll-slide-down-before {
   opacity: 0;
   transform: translateY(-100px);
-  transition: all 2s ease-out;
+  transition: all 0.5s ease-out;
 }
 .scroll-slide-down-after {
   opacity: 1;
@@ -90,7 +92,7 @@ html {
 /* fade-in */
 .scroll-fade-in-before {
   opacity: 0;
-  transition: all 2s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .scroll-fade-in-after {

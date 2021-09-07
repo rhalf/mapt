@@ -20,8 +20,6 @@
               hide-delimiter-background
               hide-delimiter
               interval="3000"
-              reverse-transition="slide-x-transition"
-              transition="slide-x-transition"
               color="primary"
               class="rounded-lg"
             >
@@ -36,7 +34,7 @@
 
         <v-row>
           <v-col>
-            <v-container >
+            <v-container>
               <p v-scrollSlideLeft>
                 Our company was formed and established with the primary purpose
                 of providing integrated engineering services such as
@@ -63,10 +61,11 @@
         <v-row>
           <v-col>
             <v-img
-              v-scrollSlideUp
+              v-scrollFadeIn
               class="mx-auto"
               max-width="192"
               max-height="192"
+              :lazy-src="app.profile.logo"
               :src="app.profile.logo"
             ></v-img>
           </v-col>

@@ -10,6 +10,7 @@ export default {
   created() {
     this.loadApp();
     this.loadServices();
+    this.loadPersonnels();
   },
 
   data() {

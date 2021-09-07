@@ -11,12 +11,14 @@
             <v-hover v-slot="{ hover }">
               <v-card class="rounded-xl">
                 <v-img
+                v-scrollSlideDown
                   max-width="1080"
                   max-height="300"
+                  :lazy-src="app.profile.map_img"
                   :src="app.profile.map_img"
                   class="rounded-xl"
                 ></v-img>
-                <a v-scrollFadeIn :href="app.profile.map" text>
+                <a  :href="app.profile.map" text>
                   <v-expand-transition>
                     <div
                       v-if="hover"

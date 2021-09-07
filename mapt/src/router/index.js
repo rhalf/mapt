@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+
 import Home from '../views/Home.vue'
 import Services from '../views/Services.vue'
 import Clients from '../views/Services.vue'
 import Projects from '../views/Services.vue'
-import Personnels from '../views/Services.vue'
+import Personnels from '../views/Personnels.vue'
 import Vehicles from '../views/Services.vue'
 import About from '../views/About.vue'
 import Contact from '../views/Contact.vue'
@@ -91,10 +93,19 @@ const routes = [
 
 ]
 
+const scrollBehavior = (to, from, savedPosition) => {
+  console.log(to)
+  console.log(from)
+  console.log(savedPosition)
+
+  document.getElementById('app').scrollIntoView();
+}
+
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  // base: process.env.BASE_URL,
+  routes,
+  scrollBehavior
 })
 
 // router.beforeEach((to, from, next) => {

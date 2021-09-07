@@ -23,6 +23,9 @@ export default {
         setServices: (state, payload) => {
             state.services = payload
         },
+        setPersonnels: (state, payload) => {
+            state.personnels = payload
+        },
 
     },
     actions: {
@@ -32,9 +35,11 @@ export default {
         setVmgo: (contex, payload) => {
             contex.commit('setVmgo', payload);
         },
-
         setServices: (contex, payload) => {
             contex.commit('setServices', payload);
+        },
+        setPersonnels: (contex, payload) => {
+            contex.commit('setPersonnels', payload);
         },
     },
     getters: {
