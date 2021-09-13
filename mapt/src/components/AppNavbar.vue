@@ -13,13 +13,13 @@
     <template v-slot:img="{ props }">
       <v-img
         v-bind="props"
-        gradient="to top right, rgba(192,96,0,.7), rgba(32,0,0,.7)"
+        gradient="to top right, rgba(230,0,0,.7), rgba(230,0,0,.7)"
       ></v-img>
     </template>
 
     <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-    <v-app-bar-title>{{ app.profile.name }}</v-app-bar-title>
+    <v-app-bar-title  >{{ app.profile.name }}</v-app-bar-title>
 
     <v-spacer></v-spacer>
     <!-- <v-app-bar-nav-icon
@@ -35,15 +35,28 @@
 
     <template v-slot:extension>
       <v-tabs align-with-title>
-        <v-tab router-link :to="{name: 'Home'}">Home</v-tab>
-        <v-tab router-link :to="{name: 'Services'}">Services</v-tab>
-        <v-tab router-link :to="{name: 'Clients'}">Clients</v-tab>
-        <v-tab router-link :to="{name: 'Projects'}">Projects</v-tab>
-        <v-tab router-link :to="{name: 'Personnels'}">Personnels</v-tab>
-        <v-tab router-link :to="{name: 'Vehicles'}">Vehicles</v-tab>
-        <v-tab router-link :to="{name: 'About'}">About</v-tab>
-        <v-tab router-link :to="{name: 'Contact'}">Contact</v-tab>
-
+        <v-tab router-link :to="{ name: 'Home', hash: '#app' }">Home</v-tab>
+        <v-tab router-link :to="{ name: 'Services', hash: '#app' }"
+          >Services</v-tab
+        >
+        <v-tab router-link :to="{ name: 'Clients', hash: '#app' }"
+          >Clients</v-tab
+        >
+        <v-tab router-link :to="{ name: 'Projects', hash: '#app' }"
+          >Projects</v-tab
+        >
+        <v-tab router-link :to="{ name: 'Mining', hash: '#app' }">Mining</v-tab>
+        <v-tab router-link :to="{ name: 'Personnels', hash: '#app' }"
+          >Personnels</v-tab
+        >
+        <v-tab router-link :to="{ name: 'Vehicles', hash: '#app' }"
+          >Vehicles</v-tab
+        >
+        <v-tab router-link :to="{ name: 'Documents', hash: '#app' }">Documents</v-tab>
+        <v-tab router-link :to="{ name: 'About', hash: '#app' }">About</v-tab>
+        <v-tab router-link :to="{ name: 'Contact', hash: '#app' }"
+          >Contact</v-tab
+        >
       </v-tabs>
     </template>
 
@@ -69,7 +82,7 @@ export default {
   methods: {
     gotoHome() {
       // console.log(this.$store.state.search);
-      this.$router.push({ name: "Home" }).catch(() => {});
+      this.$router.push({ name: "Home", hash: "#app" }).catch(() => {});
     },
     toggleDrawer() {
       //this.$store.dispatch("setDrawerLeft", !this.$store.state.drawer.left);

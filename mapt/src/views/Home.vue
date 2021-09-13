@@ -1,78 +1,75 @@
 <template>
-  <v-container>
-    <v-sheet max-width="1080" class="mx-auto">
-      <v-container>
-        <v-row>
-          <v-col
-            ><h1 v-scrollSlideRight class="primary--text py-2">
-              Build your dreams.
-            </h1></v-col
+  <v-sheet max-width="1080" class="mx-auto mt-4">
+    <v-container>
+      <v-row>
+        <v-col
+          ><h2 v-scrollSlideRight class="primary--text">
+            Build your dreams.
+          </h2></v-col
+        >
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-carousel
+            v-scrollSlideDown
+            cycle
+            show-arrows-on-hover
+            max-width="1024"
+            height="320"
+            hide-delimiter-background
+            hide-delimiter
+            interval="3000"
+            color="primary"
+            class="rounded-lg"
           >
-        </v-row>
-        <v-row>
-          <v-col>
-            <v-carousel
-              v-scrollSlideDown
-              cycle
-              show-arrows-on-hover
-              max-width="1024"
-              height="320"
-              hide-delimiter-background
-              hide-delimiter
-              interval="3000"
-              color="primary"
-              class="rounded-lg"
-            >
-              <v-carousel-item
-                v-for="(item, i) in items"
-                :key="i"
-                :src="item.src"
-              ></v-carousel-item>
-            </v-carousel>
-          </v-col>
-        </v-row>
+            <v-carousel-item
+              v-for="(item, i) in items"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
+          </v-carousel>
+        </v-col>
+      </v-row>
 
-        <v-row>
-          <v-col>
-            <v-container>
-              <p v-scrollSlideLeft>
-                Our company was formed and established with the primary purpose
-                of providing integrated engineering services such as
-                maintenance, trading and construction.
-              </p>
-              <p v-scrollSlideRight>
-                The increase numbers of client and allied consultants attest to
-                the core value, vision of the company. Any interest or
-                clarification, our office is very available in your convenience
-                time.
-              </p>
-              <p v-scrollSlideLeft>
-                We hope that our company's integrated engineering experience
-                will satisfy your attention. We are looking forward for a mutual
-                and harmonious business relation in future. Thank You and God
-                Bless.
-              </p>
+      <v-row>
+        <v-col>
+          <v-container>
+            <p v-scrollSlideLeft>
+              Our company was formed and established with the primary purpose of
+              providing integrated engineering services such as maintenance,
+              trading and construction.
+            </p>
+            <p v-scrollSlideRight>
+              The increase numbers of client and allied consultants attest to
+              the core value, vision of the company. Any interest or
+              clarification, our office is very available in your convenience
+              time.
+            </p>
+            <p v-scrollSlideLeft>
+              We hope that our company's integrated engineering experience will
+              satisfy your attention. We are looking forward for a mutual and
+              harmonious business relation in future. Thank You and God Bless.
+            </p>
 
-              <p></p>
-            </v-container>
-          </v-col>
-        </v-row>
+            <p></p>
+          </v-container>
+        </v-col>
+      </v-row>
 
-        <v-row>
-          <v-col>
-            <v-img
-              v-scrollFadeIn
-              class="mx-auto"
-              max-width="192"
-              max-height="192"
-              :lazy-src="app.profile.logo"
-              :src="app.profile.logo"
-            ></v-img>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-sheet>
-  </v-container>
+      <v-row>
+        <v-col>
+          <v-img
+            v-scrollFadeIn
+            class="mx-auto"
+            width="192"
+            height="192"
+            :lazy-src="app.data.logo"
+            :src="app.data.logo"
+          ></v-img>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-sheet>
 </template>
 
 <script>
