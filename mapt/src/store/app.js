@@ -25,6 +25,9 @@ export default {
         setVmgo: (state, payload) => {
             state.vmgo = payload
         },
+        setClients: (state, payload) => {
+            state.clients = payload
+        },
         setServices: (state, payload) => {
             state.services = payload
         },
@@ -37,7 +40,9 @@ export default {
         setDocuments: (state, payload) => {
             state.documents = payload
         },
-
+        setVehicles: (state, payload) => {
+            state.vehicles = payload
+        },
 
     },
     actions: {
@@ -50,6 +55,9 @@ export default {
         setVmgo: (contex, payload) => {
             contex.commit('setVmgo', payload);
         },
+        setClients: (contex, payload) => {
+            contex.commit('setClients', payload);
+        },
         setServices: (contex, payload) => {
             contex.commit('setServices', payload);
         },
@@ -61,6 +69,9 @@ export default {
         },
         setDocuments: (contex, payload) => {
             contex.commit('setDocuments', payload);
+        },
+        setVehicles: (contex, payload) => {
+            contex.commit('setVehicles', payload);
         },
     },
     getters: {

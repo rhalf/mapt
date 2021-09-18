@@ -7,9 +7,11 @@ export default {
   created() {
     this.loadApp();
     this.loadServices();
+    this.loadClients();
     this.loadPersonnels();
     this.loadMining();
     this.loadDocuments();
+    this.loadVehicles();
   },
   data() {},
   methods: {
@@ -118,6 +120,7 @@ export default {
         snapshots.forEach((doc) => {
           var item = doc.data();
           item.id = doc.id;
+          this.getAllPhotos("/vehicles/", item);
           items.push(item);
         });
 

@@ -17,15 +17,12 @@
       ></v-img>
     </template>
 
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
 
-    <v-app-bar-title  >{{ app.profile.name }}</v-app-bar-title>
+    <v-app-bar-title>{{ app.profile.name }}</v-app-bar-title>
 
     <v-spacer></v-spacer>
-    <!-- <v-app-bar-nav-icon
-      @click="toggleDrawer"
-      v-show="user.state"
-    ></v-app-bar-nav-icon> -->
+
     <!-- <v-btn icon @click="gotoHome()">
       <v-img max-width="32" max-height="32" :src="app.profile.logo"></v-img>
     </v-btn> -->
@@ -34,43 +31,32 @@
     > -->
 
     <template v-slot:extension>
-      <v-tabs align-with-title>
-        <v-tab router-link :to="{ name: 'Home', hash: '#app' }">Home</v-tab>
-        <v-tab router-link :to="{ name: 'Services', hash: '#app' }"
-          >Services</v-tab
-        >
-        <v-tab router-link :to="{ name: 'Clients', hash: '#app' }"
-          >Clients</v-tab
-        >
-        <v-tab router-link :to="{ name: 'Projects', hash: '#app' }"
-          >Projects</v-tab
-        >
-        <v-tab router-link :to="{ name: 'Mining', hash: '#app' }">Mining</v-tab>
-        <v-tab router-link :to="{ name: 'Personnels', hash: '#app' }"
-          >Personnels</v-tab
-        >
-        <v-tab router-link :to="{ name: 'Vehicles', hash: '#app' }"
-          >Vehicles</v-tab
-        >
-        <v-tab router-link :to="{ name: 'Documents', hash: '#app' }">Documents</v-tab>
-        <v-tab router-link :to="{ name: 'About', hash: '#app' }">About</v-tab>
-        <v-tab router-link :to="{ name: 'Contact', hash: '#app' }"
-          >Contact</v-tab
+      <v-tabs align-with-title center-active>
+        <v-tab
+          router
+          v-for="(menu, index) in ui.menu"
+          :key="index"
+          :to="{ path: menu.path, hash: menu.hash }"
+          >{{ menu.text }}</v-tab
         >
       </v-tabs>
     </template>
 
-    <v-btn icon @click="gotoHome()">
+    <!-- <v-btn icon @click="gotoHome()">
       <v-icon>mdi-home</v-icon>
-    </v-btn>
+    </v-btn> -->
+
+    <qrCode></qrCode>
   </v-app-bar>
 </template>
 
 <script>
 import notify from "../mixins/notify";
+import menu from "../mixins/menu";
+import qrCode from "../dialog/qrCode";
 export default {
-  components: {},
-  mixins: [notify],
+  components: { qrCode },
+  mixins: [notify, menu],
   created() {},
   mounted() {},
   data() {
@@ -85,8 +71,8 @@ export default {
       this.$router.push({ name: "Home", hash: "#app" }).catch(() => {});
     },
     toggleDrawer() {
-      //this.$store.dispatch("setDrawerLeft", !this.$store.state.drawer.left);
-      // console.log( this.$store.state.drawer.left);
+      this.$store.dispatch("setDrawerLeft", !this.$store.state.drawer.left);
+      console.log(this.$store.state.drawer.left);
     },
   },
   computed: {},

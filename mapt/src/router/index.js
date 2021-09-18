@@ -4,14 +4,15 @@ import VueRouter from "vue-router";
 
 import Home from "../views/Home.vue";
 import Services from "../views/Services.vue";
-import Clients from "../views/Services.vue";
-import Projects from "../views/Services.vue";
+import Clients from "../views/Clients.vue";
+import Projects from "../views/Projects.vue";
 import Mining from "../views/Mining.vue";
 import Personnels from "../views/Personnels.vue";
-import Vehicles from "../views/Services.vue";
+import Vehicles from "../views/Vehicles.vue";
 import Documents from "../views/Documents.vue";
 import About from "../views/About.vue";
 import Contact from "../views/Contact.vue";
+import NotFound from "../views/NotFound.vue";
 // import MyAccount from '../views/MyAccount.vue'
 // import AccountProfile from '../views/AccountProfile.vue'
 // import AccountPassword from '../views/AccountPassword.vue'
@@ -98,6 +99,11 @@ const routes = [
     path: "/Contact",
     name: "Contact",
     component: Contact,
+  },
+  {
+    path: "*",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 

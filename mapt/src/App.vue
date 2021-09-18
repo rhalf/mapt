@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <AppNavbar></AppNavbar>
+    <AppNavbarDrawer />
+    <AppNavbar />
     <v-main style="background-color: #e0e0e0">
       <v-sheet
         id="scrolling-techniques-5"
@@ -22,6 +23,7 @@
 
 <script>
 import AppNavbar from "./components/AppNavbar";
+import AppNavbarDrawer from "./components/AppNavbarDrawer";
 import AppFooter from "./components/AppFooter";
 
 import Notify from "./components/Notify";
@@ -33,6 +35,7 @@ export default {
   mixins: [notify, app],
   components: {
     AppNavbar,
+    AppNavbarDrawer,
     AppFooter,
     Notify,
   },
