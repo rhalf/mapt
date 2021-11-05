@@ -1,6 +1,5 @@
 <template>
   <v-app-bar
-    absolute
     dark
     class="primary"
     shrink-on-scroll
@@ -8,7 +7,7 @@
     src="../assets/construction/blur/2.jpg"
     fade-img-on-scroll
     scroll-target="#scrolling-techniques-5"
-    scroll-threshold="500"
+    scroll-threshold="300"
   >
     <template v-slot:img="{ props }">
       <v-img

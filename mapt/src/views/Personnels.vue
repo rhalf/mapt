@@ -14,17 +14,22 @@
               <v-sheet v-if="personnel.owner == true">
                 <v-container>
                   <v-row>
-                    <v-col cols="auto" sm="5">
-                      <v-img
-                        v-scrollSlideRight
-                        class="mx-auto"
-                        width="124"
-                        height="124"
-                        :lazy-src="app.data.logo1"
-                        :src="app.data.logo1"
-                      ></v-img>
+                    <v-col cols="auto" sm="6" align="right">
+                      <v-hover v-slot="{ hover }">
+                        <v-sheet
+                          :elevation="hover ? 16 : 4"
+                          width="175px"
+                          v-scrollSlideLeft
+                          :class="{ 'on-hover': hover }"
+                        >
+                          <photoZoom
+                            :src="app.data.employee"
+                            orientation="portrait"
+                          ></photoZoom>
+                        </v-sheet>
+                      </v-hover>
                     </v-col>
-                    <v-col v-scrollSlideLeft>
+                    <v-col  sm="6" v-scrollSlideLeft class="">
                       <p class="text-body-1 text-sm-h6 my-0 font-weight-bold">
                         {{ personnel.name }}
                       </p>
@@ -66,15 +71,20 @@
               <v-sheet v-if="personnel.level == 1">
                 <v-container>
                   <v-row>
-                    <v-col cols="auto" sm="5">
-                      <v-img
-                        v-scrollSlideRight
-                        class="mx-auto"
-                        width="124"
-                        height="124"
-                        :lazy-src="app.data.logo1"
-                        :src="app.data.logo1"
-                      ></v-img>
+                   <v-col cols="auto" sm="6" align="right">
+                      <v-hover v-slot="{ hover }">
+                        <v-sheet
+                          :elevation="hover ? 16 : 4"
+                          width="175px"
+                          v-scrollSlideLeft
+                          :class="{ 'on-hover': hover }"
+                        >
+                          <photoZoom
+                            :src="app.data.employee"
+                            orientation="portrait"
+                          ></photoZoom>
+                        </v-sheet>
+                      </v-hover>
                     </v-col>
                     <v-col v-scrollSlideLeft>
                       <p class="text-body-1 text-sm-h6 my-0 font-weight-bold">
@@ -117,15 +127,20 @@
               <v-sheet v-if="personnel.level == 2">
                 <v-container>
                   <v-row>
-                    <v-col cols="auto" sm="5">
-                      <v-img
-                        v-scrollSlideRight
-                        class="mx-auto"
-                        width="124"
-                        height="124"
-                        :lazy-src="app.data.logo1"
-                        :src="app.data.logo1"
-                      ></v-img>
+                    <v-col cols="auto" sm="6" align="right">
+                      <v-hover v-slot="{ hover }">
+                        <v-sheet
+                          :elevation="hover ? 16 : 4"
+                          width="175px"
+                          v-scrollSlideLeft
+                          :class="{ 'on-hover': hover }"
+                        >
+                          <photoZoom
+                            :src="app.data.employee"
+                            orientation="portrait"
+                          ></photoZoom>
+                        </v-sheet>
+                      </v-hover>
                     </v-col>
                     <v-col v-scrollSlideLeft>
                       <p class="text-body-1 text-sm-h6 my-0 font-weight-bold">
@@ -168,8 +183,11 @@
 </template>
 
 <script>
+import photoZoom from "../dialog/photoZoom";
 export default {
   name: "Personnels",
+  components: { photoZoom },
+
   created() {},
   data() {
     return {

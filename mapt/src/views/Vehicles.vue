@@ -29,26 +29,26 @@
           </v-row>
 
           <v-row>
-            <v-col class="primary--text">Model :</v-col>
+            <v-col cols="4" sm="3" class="primary--text">Model :</v-col>
             <v-col class="font-weight-bold">{{
               vehicle.model | capitalize
             }}</v-col>
           </v-row>
           <v-row>
-            <v-col class="primary--text">Chassic :</v-col>
+            <v-col cols="4" sm="3" class="primary--text">Chassic :</v-col>
             <v-col>{{ vehicle.chassis }}</v-col>
           </v-row>
           <v-row>
-            <v-col class="primary--text">Engine :</v-col>
+            <v-col cols="4" sm="3" class="primary--text">Engine :</v-col>
             <v-col>{{ vehicle.engine }}</v-col>
           </v-row>
           <v-row>
-            <v-col class="primary--text">Plate :</v-col>
+            <v-col cols="4" sm="3" class="primary--text">Plate :</v-col>
             <v-col class="font-weight-bold">{{ vehicle.plate }}</v-col>
           </v-row>
 
           <v-row>
-            <v-col class="primary--text">Status :</v-col>
+            <v-col cols="4" sm="3" class="primary--text">Status :</v-col>
             <v-col
               v-if="vehicle.status == 'operating'"
               class="green--text font-weight-bold"
@@ -65,7 +65,6 @@
           ></photosZoom>
         </v-col>
       </v-row>
-      <v-row> </v-row>
     </v-container>
   </v-sheet>
 </template>

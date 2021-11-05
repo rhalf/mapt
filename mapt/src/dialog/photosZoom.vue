@@ -1,11 +1,13 @@
 <template>
-  <v-dialog v-model="open" max-width="1080px" transition="fade-transition">
+  <v-dialog
+    v-model="open"
+    max-width="1080px"
+    transition="fade-transition"
+    persistent
+  >
     <template v-slot:activator="{ on, attrs }">
       <v-hover v-slot="{ hover }">
-        <v-sheet
-          :elevation="4"
-          class="rounded-lg"
-        >
+        <v-sheet :elevation="4" class="rounded-lg">
           <v-img
             v-bind="attrs"
             v-on="on"
@@ -14,24 +16,25 @@
             :lazy-src="item.photos[0].src"
             :src="item.photos[0].src"
             class="rounded-lg"
+            transition="fade-transition"
           >
             <v-expand-transition>
-              <div
+              <v-sheet
                 v-if="hover"
                 class="
                       d-flex
                       transition-fast-in-fast-out
                       primary
-                      lighten-1
+                      darken-1
                       v-card--reveal
                       text-h5 text-sm-h3
                       white--text
                       rounded-lg
                     "
-                style="height: 100%"
+                height="100%"
               >
                 Click to open.
-              </div>
+              </v-sheet>
             </v-expand-transition>
           </v-img>
         </v-sheet>
@@ -39,10 +42,16 @@
     </template>
 
     <v-card width="1080px">
+      <v-toolbar color="primary" dark>
+        <v-spacer></v-spacer>
+        <v-btn color="white" outlined @click="open = false"
+          ><v-icon>mdi-close</v-icon></v-btn
+        >
+      </v-toolbar>
       <v-container>
-        <v-row>
+        <v-row no-gutters>
           <v-col>
-            <v-img :src="photo.src" class="rounded-lg"></v-img>
+            <v-img :src="photo.src" class="rounded"></v-img>
           </v-col>
         </v-row>
         <v-row>
@@ -64,7 +73,21 @@
                       height="64px"
                       :src="photo.src"
                       :aspect-ratio="1"
-                    ></v-img>
+                    >
+                      <template v-slot:placeholder>
+                        <v-row
+                          class="fill-height ma-0"
+                          align="center"
+                          justify="center"
+                        >
+                          <v-progress-circular
+                            indeterminate
+                            color="primary"
+                          ></v-progress-circular>
+                        </v-row>
+                      </template>
+                      ></v-img
+                    >
                   </v-sheet>
                 </v-hover>
               </v-col>
@@ -91,6 +114,7 @@ export default {
   data() {
     return {
       open: false,
+      hover: false,
       photo: {
         src: "",
       },
@@ -104,3 +128,13 @@ export default {
   },
 };
 </script>
+<style>
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: 0.5;
+  position: absolute;
+  width: 100%;
+}
+</style>

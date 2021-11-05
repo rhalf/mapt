@@ -8,6 +8,7 @@ export default {
     this.loadApp();
     this.loadServices();
     this.loadClients();
+    this.loadProjects();
     this.loadPersonnels();
     this.loadMining();
     this.loadDocuments();
@@ -71,6 +72,7 @@ export default {
         snapshots.forEach((doc) => {
           var item = doc.data();
           item.id = doc.id;
+          this.getAllPhotos("/projects/", item);
           items.push(item);
         });
 

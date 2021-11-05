@@ -2,16 +2,15 @@
   <v-sheet max-width="1080" class="mx-auto mt-4">
     <v-container>
       <v-row>
-        <v-col
-          ><h2 v-scrollSlideRight class="primary--text">
+        <v-col>
+          <h2 v-scrollSlideRight class="primary--text" v-show="build">
             Build your dreams.
-          </h2></v-col
-        >
+          </h2>
+        </v-col>
       </v-row>
       <v-row>
         <v-col>
           <v-carousel
-            v-scrollSlideDown
             cycle
             show-arrows-on-hover
             max-width="1024"
@@ -33,33 +32,100 @@
 
       <v-row>
         <v-col>
-          <v-container>
-            <p v-scrollSlideLeft>
+          <v-row v-scrollSlideUp>
+            <v-col class="text-center">
+              <p class="font-weight-bold primary--text ">
+                Services
+              </p>
+              <v-btn color="primary" outlined large
+                ><v-icon left>mdi-cog</v-icon>
+                {{ app.services.length }}
+              </v-btn>
+            </v-col>
+
+            <v-col class="text-center">
+              <p class="font-weight-bold primary--text ">
+                Clients
+              </p>
+              <v-btn color="primary" outlined large
+                ><v-icon left>mdi-account-group</v-icon>
+                {{ app.clients.length }}
+              </v-btn>
+            </v-col>
+
+            <v-col class="text-center">
+              <p class="font-weight-bold primary--text ">
+                Projects
+              </p>
+              <v-btn color="primary" outlined large
+                ><v-icon left>mdi-file-table-box-multiple</v-icon>
+                {{ app.projects.length }}
+              </v-btn>
+            </v-col>
+
+            <v-col class="text-center">
+              <p class="font-weight-bold primary--text ">
+                Mining
+              </p>
+              <v-btn color="primary" outlined large
+                ><v-icon left>mdi-bulldozer</v-icon>
+                {{ app.mining.length }}
+              </v-btn>
+            </v-col>
+
+            <v-col class="text-center">
+              <p class="font-weight-bold primary--text ">
+                Personnels
+              </p>
+              <v-btn color="primary" outlined large
+                ><v-icon left>mdi-account-supervisor</v-icon>
+                {{ app.personnels.length }}
+              </v-btn>
+            </v-col>
+
+            <v-col class="text-center">
+              <p class="font-weight-bold primary--text ">
+                Vehicles
+              </p>
+              <v-btn color="primary" outlined large
+                ><v-icon left>mdi-dump-truck</v-icon>
+                {{ app.vehicles.length }}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <v-container >
+            <p>
               Our company was formed and established with the primary purpose of
               providing integrated engineering services such as maintenance,
               trading and construction.
             </p>
-            <p v-scrollSlideRight>
+            <p>
               The increase numbers of client and allied consultants attest to
               the core value, vision of the company. Any interest or
               clarification, our office is very available in your convenience
               time.
             </p>
-            <p v-scrollSlideLeft>
+            <p>
               We hope that our company's integrated engineering experience will
               satisfy your attention. We are looking forward for a mutual and
-              harmonious business relation in future. Thank You and God Bless.
+              harmonious business relation in future.
+            </p>
+
+            <p>
+              Thank You and God Bless.
             </p>
 
             <p></p>
           </v-container>
         </v-col>
       </v-row>
-
       <v-row>
         <v-col>
           <v-img
-            v-scrollFadeIn
             class="mx-auto"
             width="192"
             height="192"
@@ -78,18 +144,9 @@ export default {
   components: {},
   data() {
     return {
+      build: true,
       app: this.$store.state.app,
-      // items: [
-      //   {
-      //     src: "https://firebasestorage.googleapis.com/v0/b/mapt-1b9b0.appspot.com/o/app%2Fextra%2F1.jpg?alt=media&token=8922958c-8b1f-4bdd-a47c-5dca067416e4",
-      //   },
-      //   {
-      //     src: "https://firebasestorage.googleapis.com/v0/b/mapt-1b9b0.appspot.com/o/app%2Fextra%2F2.jpg?alt=media&token=894e3829-215c-4bf9-85e8-c86ccf6bde79",
-      //   },
-      //   {
-      //     src: "https://firebasestorage.googleapis.com/v0/b/mapt-1b9b0.appspot.com/o/app%2Fextra%2F3.jpg?alt=media&token=5439d576-e60a-49ac-9a02-0d48b97275a4",
-      //   },
-      // ],
+
       items: [
         {
           src: require("../assets/construction/random/1.jpg"),

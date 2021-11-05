@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="open" max-width="1024px">
+  <v-dialog v-model="open" max-width="1024px" transition="fade-transition">
     <template v-slot:activator="{ on, attrs }">
       <v-img
         v-bind="attrs"
@@ -9,7 +9,20 @@
         :aspect-ratio="3 / 4"
         :lazy-src="src"
         :src="src"
-      ></v-img>
+      >
+      <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="primary"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
       <v-img
         v-bind="attrs"
         v-on="on"
@@ -18,10 +31,23 @@
         :aspect-ratio="4 / 3"
         :lazy-src="src"
         :src="src"
-      ></v-img>
+      >
+      <template v-slot:placeholder>
+          <v-row
+            class="fill-height ma-0"
+            align="center"
+            justify="center"
+          >
+            <v-progress-circular
+              indeterminate
+              color="primary"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
     </template>
 
-    <v-card>
+     <v-card width="1080px">
       <v-img :src="src"></v-img>
     </v-card>
   </v-dialog>

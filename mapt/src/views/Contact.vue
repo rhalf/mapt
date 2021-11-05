@@ -18,22 +18,22 @@
               ></v-img>
               <a :href="app.data.map" text>
                 <v-expand-transition>
-                  <div
+                  <v-sheet
                     v-if="hover"
                     class="
                       d-flex
                       transition-fast-in-fast-out
                       primary
-                      lighten-1
+                      darken-1
                       v-card--reveal
                       text-h5 text-sm-h3
                       white--text
                       rounded-lg
                     "
-                    style="height: 100%"
+                    height="100%"
                   >
                     Click to open GoogleMap.
-                  </div>
+                  </v-sheet>
                 </v-expand-transition>
               </a>
             </v-card>
@@ -70,7 +70,7 @@
               </v-row>
 
               <v-row>
-                <v-col cols="auto" sm="4" class="text-right"  v-scrollSlideRight>
+                <v-col cols="auto" sm="4" class="text-right" v-scrollSlideRight>
                   <v-btn outlined fab color="primary"
                     ><v-icon>mdi-phone-classic</v-icon></v-btn
                   >

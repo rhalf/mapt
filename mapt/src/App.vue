@@ -1,30 +1,38 @@
 <template>
   <v-app>
-    <AppNavbarDrawer />
-    <AppNavbar />
-    <v-main style="background-color: #e0e0e0">
-      <v-sheet
-        id="scrolling-techniques-5"
-        class="overflow-y-auto overflow-x-hidden"
-        style="height: 100vh"
-      >
-        <v-container>
-          <v-sheet height="200" width="auto"> </v-sheet>
-          <v-fade-transition>
-            <router-view></router-view>
-          </v-fade-transition>
-        </v-container>
-        <AppFooter />
-      </v-sheet>
-    </v-main>
-    <Notify />
+    <Base>
+      <template slot="navbar">
+        <Navbar />
+      </template>
+      <template slot="leftDrawer">
+        <LeftDrawer />
+      </template>
+
+      <template slot="main">
+        <v-main style="background-color: #c0c0c0">
+          <v-sheet
+            id="scrolling-techniques-5"
+            class="overflow-y-auto overflow-x-hidden"
+            height="100vh"
+            min-height="100vh"
+          >
+            <v-slide-x-reverse-transition mode="out-in">
+              <router-view></router-view>
+            </v-slide-x-reverse-transition>
+            <Footer />
+          </v-sheet>
+        </v-main>
+        <Notify />
+      </template>
+    </Base>
   </v-app>
 </template>
 
 <script>
-import AppNavbar from "./components/AppNavbar";
-import AppNavbarDrawer from "./components/AppNavbarDrawer";
-import AppFooter from "./components/AppFooter";
+import Base from "./layouts/Base";
+import Navbar from "./layouts/Navbar";
+import LeftDrawer from "./layouts/LeftDrawer";
+import Footer from "./layouts/Footer";
 
 import Notify from "./components/Notify";
 import notify from "./mixins/notify";
@@ -34,9 +42,10 @@ import app from "./mixins/app";
 export default {
   mixins: [notify, app],
   components: {
-    AppNavbar,
-    AppNavbarDrawer,
-    AppFooter,
+    Base,
+    Navbar,
+    LeftDrawer,
+    Footer,
     Notify,
   },
   data() {
@@ -47,9 +56,14 @@ export default {
 </script>
 
 <style>
-html {
-  overflow-y: auto;
+::-webkit-scrollbar {
+  width: 0;
 }
+
+html {
+  overflow: hidden;
+}
+
 /* slide-right */
 .scroll-slide-right-before {
   opacity: 0;

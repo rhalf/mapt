@@ -5,25 +5,35 @@
         <v-col
           ><h2 v-scrollSlideRight class="primary--text">
             List of Major Clients
-          </h2></v-col
-        >
+          </h2>
+        </v-col>
+        <v-col cols="12" sm="auto">
+          <v-text-field
+            label="Search"
+            v-model="searchQuery"
+            outlined
+            append-icon="mdi-magnify"
+            dense
+          ></v-text-field>
+        </v-col>
       </v-row>
 
       <v-row>
         <v-col
           cols="auto"
-          v-for="client in app.clients"
+          v-for="client in clients"
           :key="client.id"
           class="mx-auto"
         >
-          <v-hover v-slot="{ hover }" v-scrollFadeIn>
+          <v-hover v-slot="{ hover }">
             <v-card
               width="330px"
               :elevation="hover ? 16 : 4"
               :class="{ 'on-hover': hover }"
+              ripple
             >
-              <v-sheet :color="randomColors()" height="80px" class="py-3">
-                <h3 class="white--text text-center ">
+              <v-sheet :color="randomColors()" height="50px" class="py-3">
+                <h3 class="white--text text-center text-truncate">
                   {{ client.name }}
                 </h3></v-sheet
               >
@@ -45,9 +55,9 @@
 <script>
 export default {
   name: "Clients",
-  components: {},
   data() {
     return {
+      searchQuery: "",
       app: this.$store.state.app,
       colors: [
         "red",
@@ -65,9 +75,28 @@ export default {
     };
   },
   methods: {
+
     randomColors() {
       return this.colors[Math.floor(Math.random() * this.colors.length)];
     },
   },
+  computed: {
+      clients() {
+      if (this.searchQuery) {
+        return this.app.clients.filter((item) => {
+          return this.searchQuery
+            .toLowerCase()
+            .split(" ")
+            .every((v) => {
+              if (item.name.toLowerCase().includes(v)) return item;
+              if (item.desc.toLowerCase().includes(v)) return item;
+              if (item.address.toLowerCase().includes(v)) return item;
+            });
+        });
+      } else {
+        return this.app.clients;
+      }
+    },
+  }
 };
 </script>

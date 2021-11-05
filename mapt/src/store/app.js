@@ -28,6 +28,9 @@ export default {
         setClients: (state, payload) => {
             state.clients = payload
         },
+        setProjects: (state, payload) => {
+            state.projects = payload
+        },
         setServices: (state, payload) => {
             state.services = payload
         },
@@ -57,6 +60,9 @@ export default {
         },
         setClients: (contex, payload) => {
             contex.commit('setClients', payload);
+        },
+        setProjects: (contex, payload) => {
+            contex.commit('setProjects', payload);
         },
         setServices: (contex, payload) => {
             contex.commit('setServices', payload);

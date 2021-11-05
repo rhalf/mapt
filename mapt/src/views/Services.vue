@@ -3,10 +3,10 @@
     <v-container>
       <v-row>
         <v-col>
-          <h2 v-scrollSlideRight class="primary--text py-2">Specialization</h2>
-          <v-sheet v-scrollSlideLeft>
+          <h2 v-scrollSlideRight class="primary--text ">Specialization</h2>
+          <v-sheet>
             <p
-              class="black--text"
+              class="black--text pa-2"
               v-for="(specialty, index) in app.vmgo.specialize"
               v-bind:key="index"
             >
@@ -21,7 +21,7 @@
             Services Offered
           </h2>
 
-          <v-sheet v-scrollSlideLeft>
+          <v-sheet>
             <p
               class="black--text"
               v-for="(service, index) in app.services"

@@ -1,7 +1,7 @@
 <template>
   <v-footer dark padless class="primary">
-    <v-container fluid  >
-      <v-row >
+    <v-container>
+      <v-row>
         <v-col>
           <v-card flat class="primary white--text">
             <v-card-text class="text-center">
@@ -61,6 +61,11 @@
           {{ new Date().getFullYear() }}
         </v-card-text> -->
           </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <div height="70"></div>
         </v-col>
       </v-row>
     </v-container>
