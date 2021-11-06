@@ -41,7 +41,7 @@ jobs:
           name: dist
           path: mapt/dist
       - name: Deploy to Firebase
-        uses: mapt-1b9b0/firebase-action@master
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting:mapt
         env:
