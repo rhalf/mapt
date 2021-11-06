@@ -65,7 +65,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <div height="70"></div>
+          <v-sheet height="70"></v-sheet>
         </v-col>
       </v-row>
     </v-container>
