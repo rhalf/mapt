@@ -4,7 +4,7 @@
       <v-row>
         <v-col>
           <h2 v-scrollSlideRight class="primary--text" v-show="build">
-            Build your dreams.
+            Build your dreams...
           </h2>
         </v-col>
       </v-row>
