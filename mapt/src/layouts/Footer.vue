@@ -65,7 +65,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <v-sheet height="70"></v-sheet>
+          <v-sheet height="70" class="primary"></v-sheet>
         </v-col>
       </v-row>
     </v-container>
