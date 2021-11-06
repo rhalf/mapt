@@ -20,7 +20,7 @@ jobs:
         run: npm run build
         working-directory: mapt
       - name: Archive production artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@main
         with:
           name: dist
           path: dist
